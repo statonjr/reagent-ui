@@ -6,12 +6,25 @@
               [goog.history.EventType :as EventType])
     (:import goog.History))
 
+(defn button
+  [button_label button_type button_path]
+  (reagent/create-class {:reagent-render (fn []
+    [:a.button
+      {:class button_type :href button_path} button_label])}
+  ))
+
 ;; -------------------------
 ;; Views
 
 (defn home-page []
-  [:div [:h2 "Welcome to reagent-ui"]
-   [:div [:a {:href "#/about"} "go to about page"]]])
+  [:div
+    [:h2 "Basic Buttons"]
+    [button "Primary" "" "/#"]
+    [button "Success" "success" "/#"]
+    [button "Alert" "alert" "/#"]
+    [button "Secondary" "secondary" "/#"]
+  ]
+  )
 
 (defn about-page []
   [:div [:h2 "About reagent-ui"]
