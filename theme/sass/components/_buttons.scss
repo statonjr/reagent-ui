@@ -1,0 +1,43 @@
+button {
+  padding: 1rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  background: blue;
+  color: white;
+  border: none;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &[type='submit'] {
+    background: green;
+  }
+}
+
+.dropdown {
+  position: relative;
+  ul {
+    position: absolute;
+    left: 0;
+    max-width: 300px;
+    display: block;
+    border: 1px solid black;
+
+    li {
+      border-bottom: 1px solid black;
+      button {
+        margin: 0;
+        display: block;
+        width: 100%;
+        background: white;
+        color: black;
+      }
+
+      &:last-child { border-bottom: none; }
+    }
+
+    &.closed { display: none; }
+    &.open { display: block; }
+  }
+
+}

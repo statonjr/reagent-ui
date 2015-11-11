@@ -15,7 +15,9 @@
      [:meta {:charset "utf-8"}]
      [:meta {:name "viewport"
              :content "width=device-width, initial-scale=1"}]
-     (include-css "//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css")
+     (include-css "css/screen.css")
+     (include-css "css/print.css")
+     (include-css "css/ie.css")
      (include-css (if (env :dev) "css/site.css" "css/site.min.css"))]
     [:body
      [:div#app

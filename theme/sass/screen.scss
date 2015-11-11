@@ -1,0 +1,10 @@
+@import "compass/reset";
+@import "colors";
+@import "components/buttons";
+
+
+body { padding: 2rem; }
+.bg-green { background: green; }
+.clr-white { color: white; }
+.font-big { font-size: 20px }
+.bdr-red { border: 5px solid red }

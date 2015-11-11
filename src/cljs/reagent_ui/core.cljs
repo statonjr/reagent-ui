@@ -3,28 +3,22 @@
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [goog.events :as events]
+              [ui.button :as button]
               [goog.history.EventType :as EventType])
     (:import goog.History))
 
-(defn button
-  [button_label button_type button_path]
-  (reagent/create-class {:reagent-render (fn []
-    [:a.button
-      {:class button_type :href button_path} button_label])}
-  ))
-
-;; -------------------------
-;; Views
+(def menu-data
+  [{:label "Google", :path "google.com", :action #(println "Google")},
+  {:label "Yahoo!", :path "yahoo.com", :action #(println "Yahoo!")},
+  {:label "Youtube", :path "youtube.com", :action #(println "Youtube")}])
 
 (defn home-page []
   [:div
     [:h2 "Basic Buttons"]
-    [button "Primary" "" "/#"]
-    [button "Success" "success" "/#"]
-    [button "Alert" "alert" "/#"]
-    [button "Secondary" "secondary" "/#"]
-  ]
-  )
+    [:div [button/basic "Basic Button" "custom-class(es)-here and-here" #(println "I work")]]
+    [:div [button/submit "Submit Button" "custom-class(es)-here and-here" #(println "I work")]]
+    [:div [button/dropdown "Dropdown Button" "custom-class(es)-here and-here" menu-data]]
+    ])
 
 (defn about-page []
   [:div [:h2 "About reagent-ui"]
