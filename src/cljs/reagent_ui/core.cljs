@@ -3,7 +3,8 @@
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [goog.events :as events]
-              [ui.button :as button]
+              [ui.buttons :as button]
+              [ui.lists :as ul]
               [goog.history.EventType :as EventType])
     (:import goog.History))
 
@@ -18,6 +19,7 @@
     [:div [button/basic "Basic Button" "custom-class(es)-here and-here" #(println "I work")]]
     [:div [button/submit "Submit Button" "custom-class(es)-here and-here" #(println "I work")]]
     [:div [button/dropdown "Dropdown Button" "custom-class(es)-here and-here" menu-data]]
+    [:div [ul/menu menu-data "side-nav"]]
     ])
 
 (defn about-page []
